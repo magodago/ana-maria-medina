@@ -4,7 +4,7 @@
  */
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1920&q=80",
+  hero: "/images/hero.png",
   about: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
   gallery: [
     "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80",
