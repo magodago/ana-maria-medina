@@ -41,7 +41,7 @@ export default function Services() {
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
@@ -58,7 +58,7 @@ export default function Services() {
             <motion.div
               key={service.title}
               className="border border-white/10 p-8 hover:border-champagne-500/40 transition-colors duration-300 group"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}

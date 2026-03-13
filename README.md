@@ -56,10 +56,28 @@ git remote add origin https://github.com/YOUR_USERNAME/ana-maria-medina-model.gi
 git push -u origin main
 ```
 
-## Deployment
+## GitHub Pages (ver la web en vivo)
 
-- **Vercel**: Connect this repo; Vercel will detect Next.js. Use build command `next build` and output directory `out` for static export.
-- **GitHub Pages**: Build with `npm run build`, then upload the contents of `out/` to a `gh-pages` branch or use a GitHub Action.
+**Opción recomendada (desde tu PC):**
+
+1. Instala dependencias (si no lo has hecho): `npm install`
+2. Publica el sitio en GitHub Pages:
+   ```bash
+   npm run deploy:pages
+   ```
+   Esto construye la web y la sube a la rama `gh-pages`.
+
+3. En GitHub: **Settings** → **Pages**.
+4. En **Build and deployment** → **Source** elige **Deploy from a branch**.
+5. **Branch**: `gh-pages`, **Folder**: `/ (root)`. Guarda.
+6. En 1–2 minutos la web estará en: **https://magodago.github.io/ana-maria-medina-model/**  
+   (cambia `magodago` por tu usuario si es otro).
+
+Cada vez que quieras actualizar la web, vuelve a ejecutar `npm run deploy:pages`.
+
+## Deployment (otros)
+
+- **Vercel**: Conectar el repo; usa `next build` y carpeta `out` para static export.
 
 ## Contact form
 

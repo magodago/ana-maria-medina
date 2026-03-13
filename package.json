@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "cross-env GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/ana-maria-medina-model next build",
+    "deploy:pages": "npm run build:pages && node -e \"require('fs').writeFileSync('out/.nojekyll','')\" && npx gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,6 +17,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "gh-pages": "^6.1.1",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

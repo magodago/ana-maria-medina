@@ -17,7 +17,7 @@ export default function Social() {
       <div className="max-w-4xl mx-auto text-center">
         <motion.span
           className="text-champagne-500 text-sm tracking-[0.3em] uppercase font-medium"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
@@ -31,7 +31,7 @@ export default function Social() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-champagne-400 transition-colors duration-300"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}

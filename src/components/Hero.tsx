@@ -1,90 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
 import { images } from "@/lib/images";
 
+/**
+ * Hero: imagen como capa de fondo (img con z-0), contenido encima (z-10).
+ * Funciona igual en localhost y en GitHub Pages.
+ */
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen min-h-[400px] flex flex-col justify-end overflow-hidden shrink-0"
+      className="relative w-full min-h-screen flex flex-col justify-end overflow-hidden bg-black"
     >
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={images.hero}
-          alt="Ana Maria Medina - International Model"
-          fill
-          className="object-cover"
-          style={{ objectPosition: "50% 25%" }}
-          priority
-          sizes="100vw"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/75" />
-      </div>
-
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full flex flex-col items-center pb-20 md:pb-28 pt-[52vh]">
-        <motion.h1
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight mb-3 opacity-100 drop-shadow-lg"
-          initial={{ opacity: 1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Ana Maria
-          <br />
-          <span className="text-champagne-300">Medina</span>
-        </motion.h1>
-        <motion.p
-          className="font-sans text-base md:text-lg text-white font-light max-w-xl mx-auto mb-1 opacity-100 drop-shadow-md"
-          initial={{ opacity: 1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+      {/* Capa 1: imagen de fondo (no usa Next/Image para evitar capas que tapen) */}
+      <img
+        src={images.hero}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 w-full h-full object-cover object-[50%_28%] z-0"
+      />
+      {/* Capa 2: gradiente */}
+      <div
+        className="absolute inset-0 pointer-events-none z-[1]"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 45%, rgba(0,0,0,0.85) 100%)",
+        }}
+      />
+      {/* Capa 3: contenido */}
+      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 text-center pt-[56vh] pb-24">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-2 drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)]">
+          Ana Maria Medina
+        </h1>
+        <p className="font-sans text-base md:text-lg text-white/95 font-light mb-1 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
           From Medellín, Colombia
-        </motion.p>
-        <motion.p
-          className="font-serif text-champagne-400 text-xs md:text-sm tracking-[0.3em] uppercase mb-6 opacity-100"
-          initial={{ opacity: 1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-        >
+        </p>
+        <p className="font-sans text-sm tracking-[0.25em] uppercase text-white/90 mb-4 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
           International Model
-        </motion.p>
-        <motion.p
-          className="text-white/95 text-sm max-w-lg mx-auto mb-8 font-light opacity-100 drop-shadow-md"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
+        </p>
+        <p className="text-white/90 text-sm max-w-lg mx-auto mb-8 font-light drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
           Available for fashion, editorial, commercial campaigns and exclusive events.
-        </motion.p>
-        <motion.a
+        </p>
+        <a
           href="#contact"
-          className="inline-block px-10 py-4 border border-champagne-500 text-champagne-300 font-medium tracking-widest uppercase text-sm hover:bg-champagne-500/20 transition-all duration-300 opacity-100"
-          initial={{ opacity: 1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
+          className="inline-block px-8 py-3.5 border border-champagne-500 text-champagne-300 font-medium tracking-[0.2em] uppercase text-xs hover:bg-champagne-500/15 transition-colors duration-200"
         >
           Book Ana Maria
-        </motion.a>
+        </a>
       </div>
 
-      <motion.div
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 1 }}
-      >
-        <motion.div
-          className="w-6 h-10 border-2 border-white/80 rounded-full flex justify-center pt-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        >
-          <div className="w-1 h-2 bg-white rounded-full" />
-        </motion.div>
-      </motion.div>
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10">
+        <div className="w-5 h-8 border-2 border-white/70 rounded-full flex justify-center pt-1.5">
+          <div className="w-1 h-1.5 bg-white/90 rounded-full" />
+        </div>
+      </div>
     </section>
   );
 }

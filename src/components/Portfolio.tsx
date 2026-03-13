@@ -13,7 +13,7 @@ export default function Portfolio() {
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
@@ -30,7 +30,7 @@ export default function Portfolio() {
             <motion.div
               key={index}
               className="relative aspect-[3/4] overflow-hidden cursor-pointer group"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
@@ -54,7 +54,7 @@ export default function Portfolio() {
         {lightboxIndex !== null && (
           <motion.div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightboxIndex(null)}

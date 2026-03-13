@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 md:py-32 px-6 bg-[#0a0a0a]"
+      className="py-24 md:py-32 px-6 bg-[#0a0a0a] border-t border-white/5"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <motion.div

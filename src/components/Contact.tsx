@@ -18,7 +18,7 @@ export default function Contact() {
       <div className="max-w-2xl mx-auto">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
@@ -32,7 +32,7 @@ export default function Contact() {
 
         <motion.div
           className="text-center mb-12"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
@@ -48,7 +48,7 @@ export default function Contact() {
         {submitted ? (
           <motion.div
             className="text-center py-12 border border-champagne-500/30"
-            initial={{ opacity: 0, scale: 0.98 }}
+            initial={{ opacity: 1, scale: 1 }}
             animate={{ opacity: 1, scale: 1 }}
           >
             <p className="text-champagne-400 font-medium">
@@ -62,7 +62,7 @@ export default function Contact() {
           <motion.form
             onSubmit={handleSubmit}
             className="space-y-6"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >

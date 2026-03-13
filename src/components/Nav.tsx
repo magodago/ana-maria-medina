@@ -23,13 +23,10 @@ export default function Nav() {
 
   return (
     <>
-      <motion.header
+      <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled ? "bg-black/80 backdrop-blur-md py-4" : "bg-black/30 py-6"
         }`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
           <a href="#hero" className="font-serif text-xl text-white tracking-wide">
@@ -59,7 +56,7 @@ export default function Nav() {
             )}
           </button>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {open && (

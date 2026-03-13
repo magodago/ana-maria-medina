@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto text-center">
         <motion.p
           className="font-serif text-champagne-400 text-lg"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
