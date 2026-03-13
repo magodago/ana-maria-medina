@@ -58,22 +58,16 @@ git push -u origin main
 
 ## GitHub Pages (ver la web en vivo)
 
-**Opción recomendada (desde tu PC):**
-
-1. Instala dependencias (si no lo has hecho): `npm install`
-2. Publica el sitio en GitHub Pages:
+1. Crea en GitHub un repo llamado **magodago.github.io** (tu usuario + .github.io).
+2. En tu PC:
    ```bash
-   npm run deploy:pages
+   npm run deploy
    ```
-   Esto construye la web y la sube a la rama `gh-pages`.
+   Esto hace un build (igual que en local) y sube la web a la rama `gh-pages` de ese repo.
+3. En el repo **magodago.github.io** → **Settings** → **Pages** → Source: rama **gh-pages**, carpeta **/ (root)**.
+4. La web quedará en **https://magodago.github.io** (se ve igual que en local).
 
-3. En GitHub: **Settings** → **Pages**.
-4. En **Build and deployment** → **Source** elige **Deploy from a branch**.
-5. **Branch**: `gh-pages`, **Folder**: `/ (root)`. Guarda.
-6. En 1–2 minutos la web estará en: **https://magodago.github.io/ana-maria-medina-model/**  
-   (cambia `magodago` por tu usuario si es otro).
-
-Cada vez que quieras actualizar la web, vuelve a ejecutar `npm run deploy:pages`.
+Para actualizar: vuelve a ejecutar `npm run deploy`.
 
 ## Deployment (otros)
 

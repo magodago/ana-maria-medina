@@ -1,17 +1,14 @@
 /** @type {import('next').NextConfig} */
-const isDev = process.env.NODE_ENV === "development";
-const isGitHubPages = process.env.GITHUB_PAGES === "true";
-// En desarrollo nunca usar basePath para que localhost funcione siempre
-const basePath = !isDev && isGitHubPages ? "/ana-maria-medina-model" : "";
-const assetPrefix = !isDev && isGitHubPages ? "/ana-maria-medina-model/" : "";
+// basePath solo cuando GITHUB_PAGES=true (script de deploy). Local no lo usa.
+const forGitHubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig = {
   output: "export",
-  basePath: basePath || undefined,
-  assetPrefix: assetPrefix || undefined,
-  images: {
-    unoptimized: true,
-  },
+  ...(forGitHubPages && {
+    basePath: "/ana-maria-medina",
+    assetPrefix: "/ana-maria-medina/",
+  }),
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

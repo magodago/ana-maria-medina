@@ -42,7 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${cormorant.variable}`}>
-      <body className="font-sans antialiased bg-[#0a0a0a] text-[#fafafa]">
+      <body
+        className="font-sans antialiased bg-[#0a0a0a] text-[#fafafa]"
+        style={{ backgroundColor: "#0a0a0a", color: "#fafafa" }}
+      >
         {children}
       </body>
     </html>

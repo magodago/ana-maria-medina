@@ -12,7 +12,7 @@ export default function Hero() {
       id="hero"
       className="relative w-full min-h-screen flex flex-col justify-end overflow-hidden bg-black"
     >
-      {/* Capa 1: imagen de fondo (no usa Next/Image para evitar capas que tapen) */}
+      {/* Capa 1: imagen de fondo - ruta fija /images/hero.png (igual local y GitHub) */}
       <img
         src={images.hero}
         alt=""
