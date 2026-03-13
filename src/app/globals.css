@@ -11,11 +11,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100%;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 @layer utilities {

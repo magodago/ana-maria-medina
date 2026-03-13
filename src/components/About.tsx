@@ -13,10 +13,10 @@ export default function About() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <motion.div
           className="relative aspect-[3/4] min-h-[400px]"
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 1, x: 0 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
         >
           <Image
             src={images.about}
@@ -32,28 +32,25 @@ export default function About() {
         <div>
           <motion.span
             className="text-champagne-500 text-sm tracking-[0.3em] uppercase font-medium"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
           >
             About Ana Maria
           </motion.span>
           <motion.h2
             className="font-serif text-4xl md:text-5xl font-light mt-4 mb-8 text-white"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
           >
             Elegance, presence &amp; professionalism
           </motion.h2>
           <motion.div
             className="space-y-5 text-white/80 font-light leading-relaxed text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
           >
             <p>
               Ana Maria Medina is a professional model based in Medellín, Colombia, with a distinctive style that blends Latin elegance, sophistication and confidence. Her career spans fashion editorials, commercial campaigns and high-profile events.

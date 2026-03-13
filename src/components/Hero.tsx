@@ -8,62 +8,63 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen min-h-[400px] flex flex-col justify-end overflow-hidden shrink-0"
     >
       <div className="absolute inset-0 z-0">
         <Image
           src={images.hero}
           alt="Ana Maria Medina - International Model"
           fill
-          className="object-cover object-center"
+          className="object-cover"
+          style={{ objectPosition: "50% 25%" }}
           priority
           sizes="100vw"
           unoptimized
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/75" />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.p
-          className="font-serif text-champagne-400 text-sm md:text-base tracking-[0.3em] uppercase mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          International Model
-        </motion.p>
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full flex flex-col items-center pb-20 md:pb-28 pt-[52vh]">
         <motion.h1
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white tracking-tight mb-4"
-          initial={{ opacity: 0, y: 30 }}
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight mb-3 opacity-100 drop-shadow-lg"
+          initial={{ opacity: 1, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.5 }}
         >
           Ana Maria
           <br />
           <span className="text-champagne-300">Medina</span>
         </motion.h1>
         <motion.p
-          className="font-sans text-lg md:text-xl text-white/90 font-light max-w-xl mx-auto mb-10"
-          initial={{ opacity: 0, y: 20 }}
+          className="font-sans text-base md:text-lg text-white font-light max-w-xl mx-auto mb-1 opacity-100 drop-shadow-md"
+          initial={{ opacity: 1, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
           From Medellín, Colombia
         </motion.p>
         <motion.p
-          className="text-white/80 text-sm md:text-base max-w-lg mx-auto mb-12 font-light"
-          initial={{ opacity: 0 }}
+          className="font-serif text-champagne-400 text-xs md:text-sm tracking-[0.3em] uppercase mb-6 opacity-100"
+          initial={{ opacity: 1, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          International Model
+        </motion.p>
+        <motion.p
+          className="text-white/95 text-sm max-w-lg mx-auto mb-8 font-light opacity-100 drop-shadow-md"
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.3 }}
         >
           Available for fashion, editorial, commercial campaigns and exclusive events.
         </motion.p>
         <motion.a
           href="#contact"
-          className="inline-block px-10 py-4 border border-champagne-500 text-champagne-300 font-medium tracking-widest uppercase text-sm hover:bg-champagne-500/20 transition-all duration-300"
-          initial={{ opacity: 0, y: 20 }}
+          className="inline-block px-10 py-4 border border-champagne-500 text-champagne-300 font-medium tracking-widest uppercase text-sm hover:bg-champagne-500/20 transition-all duration-300 opacity-100"
+          initial={{ opacity: 1, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -72,17 +73,16 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        initial={{ opacity: 0 }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
       >
         <motion.div
-          className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-white/80 rounded-full flex justify-center pt-2"
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
-          <div className="w-1 h-2 bg-white/80 rounded-full" />
+          <div className="w-1 h-2 bg-white rounded-full" />
         </motion.div>
       </motion.div>
     </section>
